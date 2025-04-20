@@ -1,0 +1,941 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Job-Bridge</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+
+    
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/themify-icons.css">
+    <link rel="stylesheet" href="/static/css/nice-select.css">
+    <link rel="stylesheet" href="/static/css/flaticon.css">
+    <link rel="stylesheet" href="/static/css/gijgo.css">
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <link rel="stylesheet" href="/static/css/slicknav.css">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <link rel="stylesheet" href="/static/css/style-css.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid ">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-3 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="/static/img/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="index.html">home</a></li>
+                                            <li><a href="jobs.html">Browse Job</a></li>
+                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="candidate.html">Candidates </a></li>
+                                                    <li><a href="job_details.html">job details </a></li>
+                                                    <li><a href="elements.html">elements</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html">blog</a></li>
+                                                    <li><a href="single-blog.html">single-blog</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                                <div class="Appointment">
+                                    <div class="phone_num d-none d-xl-block">
+                                        <a href="#">Log in</a>
+                                    </div>
+                                    <div class="d-none d-lg-block">
+                                        <a class="boxed-btn3" href="#">Post a Job</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider  d-flex align-items-center slider_bg_1">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-6">
+                        <div class="slider_text">
+                          <!--  <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">You can get a Job right now</h5> -->
+                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Find your Dream Job</h3>
+
+
+
+
+
+
+                                {% if username %}
+                                    <h1>Привет, {{ username }}!</h1>
+                                    <a href="/logout">Выйти</a>
+                                {% else %}
+                                    <h1>Привет, гость!</h1>
+                                    <a href="/login">Войти</a>
+                                {% endif %}
+
+
+                            <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">We will find a worker within 48 hours</p>
+                           
+
+                            <form action="/upload.php" method="post" enctype="multipart/form-data">
+                                <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <label for="resume-upload" class="boxed-btn3">Upload your Resume</label>
+                                    <input type="file" id="resume-upload" name="resume" accept=".pdf,.doc,.docx" style="display: none;">
+                                </div>
+                                <button type="submit" class="btn btn-success mt-3 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <i class="fas fa-paper-plane"></i> Submit
+                                </button>
+                            </form>
+
+  
+
+                            <!-- 
+                            <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                <a href="#" class="boxed-btn3">Upload your Resume</a>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ilstration_img wow fadeInRight d-none d-lg-block text-right" data-wow-duration="1s" data-wow-delay=".2s">
+            <img src="img/banner/illustration.png" alt="">
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <script>
+        document.getElementById('resume-upload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0]?.name || 'No file selected';
+            alert('Selected file: ' + fileName);
+            // Здесь можно добавить код для отправки файла на сервер
+        });
+    </script>
+
+
+
+    <!-- catagory_area -->
+    <div class="catagory_area">
+        <div class="container">
+            <!--
+            <div class="row cat_search">
+                <div class="col-lg-3 col-md-4">
+                    <div class="single_input">
+                        <input type="text" placeholder="Search keyword">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="single_input">
+                        <select class="wide" >
+                            <option data-display="Location">Location</option>
+                            <option value="1">Dhaka</option>
+                            <option value="2">Rangpur</option>
+                            <option value="4">Sylet</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="single_input">
+                        <select class="wide">
+                            <option data-display="Category">Category</option>
+                            <option value="1">Category 1</option>
+                            <option value="2">Category 2</option>
+                            <option value="4">Category 3</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12">
+                    <div class="job_btn">
+                        <a href="#" class="boxed-btn3">Find Job</a>
+                    </div>
+                </div>
+            </div>
+            -->    
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="popular_search d-flex align-items-center">
+                        <span>Needed now:</span>
+                        <ul>
+                            <li><a href="#">Process operator</a></li>
+                            <li><a href="#">Production employee</a></li>
+                            <li><a href="#">Warehouse employee</a></li>
+                            <li><a href="#">Warehouse sorter</a></li>
+                            <li><a href="#">Quality employee</a></li>
+                            <li><a href="#">Order picker</a></li>
+                            <li><a href="#">Packing employee</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ catagory_area -->
+
+    <!-- popular_catagory_area_start  -->
+    <!-- 
+    <div class="popular_catagory_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title mb-40">
+                        <h3>Popolar Categories</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>Design & Creative</h4></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>Marketing</h4></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>Telemarketing</h4></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>Software & Web</h4></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>Administration</h4></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>Teaching & Education</h4></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>Engineering</h4></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="jobs.html"><h4>Garments / Textile</h4></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- popular_catagory_area_end  -->
+
+    <!-- job_listing_area_start  -->
+    <div class="job_listing_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="section_title">
+                        <h3>Job Listing</h3>
+                    </div>
+                </div>
+                <!--
+                <div class="col-lg-6">
+                    <div class="brouse_job text-right">
+                        <a href="jobs.html" class="boxed-btn4">Browse More Job</a>
+                    </div>
+                </div>
+                -->
+            </div>
+            
+
+
+
+
+
+
+            <!--
+            <div class="job_lists">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="single_jobs white-bg d-flex justify-content-between">
+                            <div class="jobs_left d-flex align-items-center">
+                                <div class="thumb">
+                                    <img src="img/svg_icon/1.svg" alt="">
+                                </div>
+                                <div class="jobs_conetent">
+                                    <a href="job_details.html"><h4>Process operator</h4></a>
+                                    <div class="links_locat d-flex align-items-center">
+                                        <div class="location">
+                                            <p> <i class="fa fa-map-marker"></i> 2408 JV Alphen aan den Rijn</p>
+                                        </div>
+                                        <div class="location">
+                                            <p> <i class="fa fa-clock-o"></i> Full-time</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jobs_right">
+                                <div class="apply_now">
+                                   
+                                    <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a>
+                                  
+                                    <a href="job_details.html" class="boxed-btn3">Apply Now</a>
+                                </div>
+                                <div class="date">
+                                    <p>Date: 1 Apr 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+
+                </div>
+            </div> -->
+
+
+
+
+<!-- job_listing_area_start -->
+<div class="job_listing_area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="section_title">
+                    <h3>Job Listing</h3>
+                </div>
+            </div>
+            {% if username and is_admin %}
+            <div class="col-lg-6">
+                <div class="brouse_job text-right">
+                    <a href="/add_job" class="boxed-btn4">Add Job</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="job_lists">
+            <div class="row">
+                {% for job in jobs %}
+                <div class="col-lg-12 col-md-12">
+                    <div class="single_jobs white-bg d-flex justify-content-between">
+                        <div class="jobs_left d-flex align-items-center">
+                            <div class="thumb">
+                                <img src="/static/img/svg_icon/1.svg" alt="">
+                            </div>
+                            <div class="jobs_conetent">
+                                <a href="job_details.html"><h4>{{ job.job_name }}</h4></a>4
+
+
+
+
+                                <div class="apply_now">
+                                    <a href="#" onclick="toggleFavorite( {{ job.id }} )" class="heart_mark"><i class="ti-heart"></i></a>
+                                    <a href="/job/{{ job.id }}" class="boxed-btn3">Apply Now</a>
+                                </div>
+                                <script>
+                                    async function toggleFavorite(jobId) {
+                                        const response = await fetch(`/favorite/${jobId}`, { method: 'POST' });
+                                        const result = await response.json();
+                                        alert(result.message);
+                                    }
+                                </script>
+
+
+
+                                <a href="/job/{{ job.id }}"><h4>{{ job.job_name }}</h4></a>
+                                <form action="/upload" method="post" enctype="multipart/form-data">
+                                    <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                        <label for="resume-upload" class="boxed-btn3">Upload your Resume</label>
+                                        <input type="file" id="resume-upload" name="resume" accept=".pdf,.doc,.docx" style="display: none;">
+                                    </div>
+                                    <button type="submit" class="btn btn-success mt-3 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                        <i class="fas fa-paper-plane"></i> Submit
+                                    </button>
+                                </form>
+
+
+
+
+
+
+
+                                <div class="links_locat d-flex align-items-center">
+                                    <div class="location">
+                                        <p><i class="fa fa-map-marker"></i> {{ job.location }}</p>
+                                    </div>
+                                    <div class="location">
+                                        <p><i class="fa fa-clock-o"></i> {{ job.busy }}</p>
+                                    </div>
+                                </div>
+                                <p>{{ job.description | truncate(30) }}</p>
+                            </div>
+                        </div>
+                        <div class="jobs_right">
+                            <div class="apply_now">
+                                <a href="job_details.html" class="boxed-btn3">Apply Now</a>
+                            </div>
+                            <div class="date">
+                                <p>Date: {{ job.time_publication }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+
+                <div class="pagination">
+                    {% if page > 1 %}
+                        <a href="?page={{ page - 1 }}&per_page={{ per_page }}">Previous</a>
+                    {% endif %}
+                    {% if (page * per_page) < total_jobs %}
+                        <a href="?page={{ page + 1 }}&per_page={{ per_page }}">Next</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- job_listing_area_end -->
+
+
+
+
+
+        </div>
+    </div>
+    <!-- job_listing_area_end  -->
+
+    <!-- featured_candidates_area_start  -->
+    <!-- 
+    <div class="featured_candidates_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title text-center mb-40">
+                        <h3>Featured Candidates</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="candidate_active owl-carousel">
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/1.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/2.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/3.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/4.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/5.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/6.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/7.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/8.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/9.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/9.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/10.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/3.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+                                <img src="img/candiateds/4.png" alt="">
+                            </div>
+                            <a href="#"><h4>Markary Jondon</h4></a>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- featured_candidates_area_end  -->
+
+    <!--
+    <div class="top_companies_area">
+        <div class="container">
+            <div class="row align-items-center mb-40">
+                <div class="col-lg-6 col-md-6">
+                    <div class="section_title">
+                        <h3>Top Companies</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="brouse_job text-right">
+                        <a href="jobs.html" class="boxed-btn4">Browse More Job</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_company">
+                        <div class="thumb">
+                            <img src="img/svg_icon/5.svg" alt="">
+                        </div>
+                        <a href="jobs.html"><h3>Snack Studio</h3></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_company">
+                        <div class="thumb">
+                            <img src="img/svg_icon/4.svg" alt="">
+                        </div>
+                        <a href="jobs.html"><h3>Snack Studio</h3></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_company">
+                        <div class="thumb">
+                            <img src="img/svg_icon/3.svg" alt="">
+                        </div>
+                        <a href="jobs.html"><h3>Snack Studio</h3></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_company">
+                        <div class="thumb">
+                            <img src="img/svg_icon/1.svg" alt="">
+                        </div>
+                        <a href="jobs.html"><h3>Snack Studio</h3></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- job_searcing_wrap  -->
+    <div class="job_searcing_wrap overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 offset-lg-1 col-md-6">
+                    <div class="searching_text">
+                        <h3>Looking for a Job?</h3>
+                        <p>We do not need a resume, just leave your phone number. We will help everyone who wants it. </p>
+                        <a href="#" class="boxed-btn3">Browse Job</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 col-md-6">
+                    <div class="searching_text">
+                        <h3>Looking for a Expert?</h3>
+                        <p>We will find a worker within 48 hours</p>
+                        <a href="#" class="boxed-btn3">Post a Job</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- job_searcing_wrap end  -->
+
+    <!-- testimonial_area  -->
+    <div class="testimonial_area  ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title text-center mb-40">
+                        <h3>Testimonial</h3>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <div class="testmonial_active owl-carousel">
+                        <div class="single_carousel">
+                            <div class="row">
+                                <div class="col-lg-11">
+                                    <div class="single_testmonial d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="img/icon-user.png" alt="">
+                                            <div class="quote_icon">
+                                                <i class="Flaticon flaticon-quote"></i>
+                                            </div>
+                                        </div>
+                                        <div class="info">
+                                            <p>
+                                                "Fantastic Experience with JobBridge!"
+                                            </p>
+                                            <p>
+                                                I couldn’t be happier with the service I received from JobBridge. 
+                                                They listened to my needs, found me a job that perfectly matches my skills, 
+                                                and supported me throughout the entire process. Within two weeks, I was starting my dream job! 
+                                                Highly recommend them to anyone looking for employment opportunities.
+                                            </p>
+                                            <span>- Katarzyna Nowak</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="row">
+                                <div class="col-lg-11">
+                                    <div class="single_testmonial d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="img/icon-user.png" alt="">
+                                            <div class="quote_icon">
+                                                <i class=" Flaticon flaticon-quote"></i>
+                                            </div>
+                                        </div>
+                                        <div class="info">
+                                            <p>
+                                                "Professional and Efficient Team"
+                                            </p>
+                                            <p>
+                                                JobBridge exceeded my expectations! The team was incredibly professional, friendly, and quick to respond. 
+                                                They helped me polish my resume and connected me with a great company. Thanks to them, I’m now working in a role I love. Five stars!
+                                            </p>
+                                            <span>- Oleksandr Kovalenko</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="row">
+                                <div class="col-lg-11">
+                                    <div class="single_testmonial d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="img/icon-user.png" alt="">
+                                            <div class="quote_icon">
+                                                <i class="Flaticon flaticon-quote"></i>
+                                            </div>
+                                        </div>
+                                        <div class="info">
+                                            <p>
+                                                "Geweldige service van JobBridge!"
+                                            </p>
+                                            <p>
+                                                Ik ben zo blij met de hulp van JobBridge. Ze hebben echt naar me geluisterd en binnen no-time een baan voor me gevonden 
+                                                die precies bij me past. Het team is super vriendelijk en professioneel. Ik raad ze iedereen aan die op zoek is naar werk!
+                                            </p>
+                                            <span>- Lotte de Vries</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="row">
+                                <div class="col-lg-11">
+                                    <div class="single_testmonial d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="img/icon-user.png" alt="">
+                                            <div class="quote_icon">
+                                                <i class="Flaticon flaticon-quote"></i>
+                                            </div>
+                                        </div>
+                                        <div class="info">
+                                            <p>
+                                                "A Game-Changer for My Career"
+                                            </p>
+                                            <p>
+                                                After months of searching on my own, I turned to JobBridge, and it was the best decision I made. 
+                                                They took the time to understand my goals and found me a position that’s a perfect fit. The whole process was smooth and stress-free. 
+                                                Thank you, JobBridge!
+                                            </p>
+                                            <span>- Giulia Rossi</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="row">
+                                <div class="col-lg-11">
+                                    <div class="single_testmonial d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="img/icon-user.png" alt="">
+                                            <div class="quote_icon">
+                                                <i class="Flaticon flaticon-quote"></i>
+                                            </div>
+                                        </div>
+                                        <div class="info">
+                                            <p>
+                                                "JobBridge heeft mijn verwachtingen overtroffen"
+                                            </p>
+                                            <p> 
+                                                "Dankzij JobBridge heb ik nu een fantastische baan. Ze hebben me geholpen met mijn CV en me in contact gebracht met een topbedrijf. 
+                                                Het proces was snel en makkelijk, en ik voelde me echt ondersteund. Bedankt, JobBridge!"
+                                            </p>
+                                            <span>- Jasper van Dijk</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /testimonial_area  -->
+
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-md-6 col-lg-8">
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.1s" data-wow-delay=".4s">
+                            <h3 class="footer_title">
+                                Company
+                            </h3>
+                            <ul>
+                                <li><a href="#">About </a></li>
+                                <li><a href="#"> Pricing</a></li>
+                                <li><a href="#">Carrier Tips</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                            <p>
+                                office@job-bridge.nl <br>
+                                +3162613526135 <br>
+                                2405 VX Alphen aan den Rijn, Zuid-Holland
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/Job-Bridge.nl/">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".5s">
+                            <h3 class="footer_title">
+                                Category
+                            </h3>
+                            <ul>
+                                <li><a href="#">Design & Art</a></li>
+                                <li><a href="#">Engineering</a></li>
+                                <li><a href="#">Sales & Marketing</a></li>
+                                <li><a href="#">Finance</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    -->
+                    <!--
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.3s" data-wow-delay=".6s">
+                            <h3 class="footer_title">
+                                Subscribe
+                            </h3>
+                            <form action="#" class="newsletter_form">
+                                <input type="text" placeholder="Enter your mail">
+                                <button type="submit">Subscribe</button>
+                            </form>
+                            <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
+                                luckily.</p>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This is the website of the company "Job-Bridge"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/ footer end  -->
+
+    <!-- link that opens popup -->
+    <!-- JS here -->
+    <script src="/static/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="/static/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/isotope.pkgd.min.js"></script>
+    <script src="/static/js/ajax-form.js"></script>
+    <script src="/static/js/waypoints.min.js"></script>
+    <script src="/static/js/jquery.counterup.min.js"></script>
+    <script src="/static/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/static/js/scrollIt.js"></script>
+    <script src="/static/js/jquery.scrollUp.min.js"></script>
+    <script src="/static/js/wow.min.js"></script>
+    <script src="/static/js/nice-select.min.js"></script>
+    <script src="/static/js/jquery.slicknav.min.js"></script>
+    <script src="/static/js/jquery.magnific-popup.min.js"></script>
+    <script src="/static/js/plugins.js"></script>
+    <script src="/static/js/gijgo.min.js"></script>
+
+
+
+    <!--contact js-->
+    <script src="/static/js/contact.js"></script>
+    <script src="/static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/static/js/jquery.form.js"></script>
+    <script src="/static/js/jquery.validate.min.js"></script>
+    <script src="/static/js/mail-script.js"></script>
+
+
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>

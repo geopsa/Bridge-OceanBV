@@ -1,0 +1,60 @@
+<!-- templates/job_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ job.job_name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ job.job_name }}</h1>
+    <p><strong>Location:</strong> {{ job.location }}</p>
+    <p><strong>Description:</strong> {{ job.description | replace('\n', '<br>') | safe }}</p>
+    <p><strong>Salary:</strong> {{ job.salary }}</p>
+    <p><strong>Type:</strong> {{ job.busy }}</p>
+    <p><strong>People Needed:</strong> {{ job.how_many_people }}</p>
+    <p><a href="/jobs/">Back to Job Listings</a></p>
+
+
+
+
+    <div class="job_location_wrap">
+        <div id="map" style="height: 200px;"></div>
+        <script>
+            function initMap() {
+                var location = {lat: {{ job.latitude | default(-25.363) }}, lng: {{ job.longitude | default(131.044) }}};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: location,
+                    zoom: 9
+                });
+                new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            }
+        </script>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    </div>
+</body>
+</html>

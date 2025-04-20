@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить вакансию</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Добавить вакансию</h1>
+    <form method="post">
+        <input type="text" name="job_name" placeholder="Название вакансии" required>
+        <textarea name="description" placeholder="Описание" required></textarea>
+        <input type="text" name="location" placeholder="Местоположение" required>
+        <input type="text" name="busy" placeholder="Тип занятости (Full-time/Part-time)" required>
+        <input type="number" name="how_many_people" placeholder="Количество людей" required>
+        <input type="text" name="salary" placeholder="Зарплата" required>
+        <input type="text" name="favorites" placeholder="Избранное" required>
+        <input type="text" name="question" placeholder="Вопрос" required>
+        <button type="submit">Добавить</button>
+    </form>
+    <a href="/">Назад</a>
+</body>
+</html>
