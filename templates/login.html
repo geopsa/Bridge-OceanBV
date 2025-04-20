@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles_login.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
+    <div class="banner">
+        <img src="/static/img/banner.jpg" alt="Banner" class="banner-image">
+        <div class="banner-text">
+            <h1>Login to Bridge Ocean BV</h1>
+        </div>
+    </div>
     <div class="container">
-        <div class="form-card">
+        <div class="card">
             <h2>Login</h2>
             <form id="login-form" onsubmit="handleLogin(event)">
                 <div class="form-group">
@@ -21,9 +27,9 @@
                 </div>
                 <button type="submit" class="btn">Login</button>
             </form>
-            <p class="link">Don't have an account? <a href="register.html">Register</a></p>
+            <p class="link">Don't have an account? <a href="/register">Register</a></p>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>

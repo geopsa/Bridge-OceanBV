@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
+    <div class="banner">
+        <img src="/static/img/banner.jpg" alt="Banner" class="banner-image">
+        <div class="banner-text">
+            <h1>Join Bridge Ocean BV</h1>
+        </div>
+    </div>
     <div class="container">
-        <div class="form-card">
+        <div class="card">
             <h2>Register</h2>
             <form id="register-form" onsubmit="handleRegister(event)">
                 <div class="form-group">
@@ -29,9 +35,9 @@
                 </div>
                 <button type="submit" class="btn">Register</button>
             </form>
-            <p class="link">Already have an account? <a href="index.html">Login</a></p>
+            <p class="link">Already have an account? <a href="/login">Login</a></p>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>
