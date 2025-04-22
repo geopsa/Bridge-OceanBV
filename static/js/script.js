@@ -29,3 +29,5 @@ function handleRegister(event) {
         alert('Please fill in all fields');
     }
 }
+
+
